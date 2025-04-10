@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="styles/style.css">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Receptsidan för singlar</title>
+</head>
+
+<!-- Amanda Kilström -->
+<!-- Persona: Nybörjaren Nicke --> 
+
+<body>
+    <!-- En header med olika funktioner för sidan -->
+    <header>
+        <p class="headerText">Receptsidan för singlar</p>
+        <div class="containerButtons">
+            <button id="recipe">Recept</button>
+            <button id="addRecipe">Lägg till recept</button>
+            <button id="about">Om oss</button>
+            <button id="logIn">Logga in</button>
+        </div>
+    </header>
+
+    <!-- breadcrumd för att se vilka flikar man har gått för att komma till recepetet 
+     # används som en placeholder då det inte finns andra flikar ännu -->
+    <nav class="breadcrumb">
+        <a href="#">Startsida</a> &gt;
+        <a href="#">Recept</a> &gt;
+        <a href="#">Allt på en plåt</a>
+    </nav>
+
+    <form class="search">
+        <input class="searchInput" type="search" placeholder="Sök...">
+        <button class="searchButton" type="submit">Sök</button>
+    </form>
+
+    <div class="container">
+        <h1>Allt på en plåt</h1>
+        <a id="favorite" href="#">Spara som favorit</a>
+        <!-- Taggar som inte är funktionella, men tanken är att man ska kunna komma till liknande
+         recept om man klickar på en tag -->
+        <div class="tags">
+            Taggar:
+            <a id="tags" href="#">#Lättlagat</a>
+            <a id="tags" href="#">#Billiga rätter</a>
+            <a id="tags" href="#">#Hälsosam kyckling</a>
+            <a id="tags" href="#">#På 45 min</a>
+        </div>
+    </div>
+
+
+    <div class="recipeContainer">
+        <p class="description">Laga allt i en långpanna i ugnen!
+            Det är enkelt, smidigt och det blir mindre disk.
+            Dessutom blir det gott!
+            Visst, det tar tid att få rätten klar i ugnen
+            men då kan du göra annat under tiden.
+            I det här receptet ingår billiga och
+            nyttiga ingredienser som morot, pumpa och kyckling.</p>
+
+        <div class="image">
+            <img src="images/allt-pa-en-plat.png.jpg" alt="en maträtt på en ugnsplåt">
+        </div>
+    </div>
+
+    <!-- &nbsp används för att få mer mellanrum mellan delarna -->
+    <div class="recipeInfo">
+        <p>Tid: 45 min&nbsp;&nbsp;&nbsp;Svårighet: Lättlagat&nbsp;&nbsp;&nbsp;Budget: Billig</p>
+        <p>Recept av: Amanda Kilström</p>
+    </div>
+
+    <!-- En dropdown för portionstorlekar -->
+    <div class="portions">
+        <label for="dropdown">Antal portioner:</label>
+        <select class="portionsDrop" id="dropdown">
+            <option value="1">1 portion</option>
+            <option value="2">2 portioner</option>
+            <option value="3">4 portioner</option>
+            <option value="4">6 portioner</option>
+        </select>
+    </div>
+
+    <div class="recipeHow">
+        <div class="ingredients">
+            <h2>Ingredienser</h2>
+            <ul>
+                <li>1/2 Rödlök</li>
+                <li>200 gram Sötpotatis</li>
+                <li>100 gram Morot</li>
+                <li>150 gram Kycklinglårfile</li>
+                <li>1 tsk Soja (valfritt)</li>
+                <li>1 matsked Rapsolja</li>
+                <li>1 tsk Torkad timjan</li>
+                <li>Salt och Peppar efter smak</li>
+            </ul>
+
+            <h3>Tips</h3>
+            <p>Salladsost kan vara ett alternativ till fetaost.
+                Om du gillar ingefära kan det passa till
+                (t.ex. 1 tsk torkad eller 1/2 msk finriven färsk)</p>
+
+            <h3>Information om allergier</h3>
+            <p>Äkta fetaost innehåller mjölk men nästan ingen laktos.
+                Om annan ost används, läs på förpackning</p>
+        </div>
+
+        <div class="steps">
+            <h2>Gör så här</h2>
+            <ol>
+                <li>Sätt ugnen på 225 grader</li>
+                <li>Skala och klyfta rödlök och sötpotatis</li>
+                <li>Skär morot i stavar</li>
+                <li>Dela på kycklingfilerna</li>
+                <li>Blanda kyckling, morot, sötpotatis och rödlök
+                    i en bunke med oljan, kryddorna och ev. soja</li>
+                <li>Sprid ut allting på en ugnsplåt (använd gärna bakplåtspapper)</li>
+                <li>Ställ in i ugnen i ca 30 minuter</li>
+                <li>Smula över fetaost och servera direkt</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- En checkbox som startar en "timer" -->
+    <h2>Ugnstimer (30 min)</h2>
+    <input type="checkbox" id="startTimer" hidden>
+    <label class="timer" for="startTimer">
+        Starta Timer
+    </label>
+    <div class="timerBar"></div>
+
+    <h2 class="rateText">Vad tyckte du?</h2>
+
+    <!-- &#9733; är koden för en stjärna -->
+    <div class="rating">
+        <input type="radio" id="star5" name="rating" value="5">
+        <label for="star5">&#9733;</label>
+
+        <input type="radio" id="star4" name="rating" value="4">
+        <label for="star4">&#9733;</label>
+
+        <input type="radio" id="star3" name="rating" value="3">
+        <label for="star3">&#9733;</label>
+
+        <input type="radio" id="star2" name="rating" value="2">
+        <label for="star2">&#9733;</label>
+
+        <input type="radio" id="star1" name="rating" value="1">
+        <label for="star1">&#9733;</label>
+    </div>
+
+    <footer>
+        <p class="footerText">Receptsidan för singlar</p>
+        <div class="information">
+            <p>Information</p>
+            <ul>
+                <li><a href="#">Om Receptsidan för singlar</a></li>
+                <li><a href="#">Nyhetsbrev</a></li>
+                <li><a href="#">Cookies</a></li>
+            </ul>
+        </div>
+        <div class="contains">
+            <p>Innehåll</p>
+            <ul>
+                <li><a href="#">Recept</a></li>
+                <li><a href="#">Topplista delade recept</a></li>
+                <li><a href="#">Veckomenyn för singeln</a></li>
+            </ul>
+        </div>
+        <div class="contact">
+            <p>Kundservice</p>
+            <ul>
+                <li><a href="#">Kontakta oss</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

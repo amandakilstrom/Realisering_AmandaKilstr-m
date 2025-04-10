@@ -1,0 +1,276 @@
+header {
+    background-color: #A1ABE9;
+    /* Använder viewport enheter för att göra sidan skalbar */
+    height: 10vh;
+    /* Sätter in en minimum höjd så att inte headern blir för liten */
+    min-height: 60px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
+
+.headerText,
+.footerText {
+    /* Använer % för att tala om hur mycket plats i elementet det ska ta */
+    margin: 5%;
+    /* Använder em så att storlen på fonten anpassas i elementet */
+    font-size: 1.5em;
+}
+
+.containerButtons,
+.footerInfo {
+    justify-content: space-evenly;
+    display: flex;
+    gap: 10px;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+}
+
+#recipe,
+#addRecipe,
+#about {
+    background-color: transparent;
+    border-style: hidden;
+    width: 20%;
+    height: 70%;
+    font-size: 1.2em;
+    color: white;
+    font-weight: bold;
+}
+
+#logIn {
+    background-color: blue;
+    width: 20%;
+    height: 70%;
+    font-size: 1.2em;
+    border-radius: 10px;
+    border-style: hidden;
+    color: white;
+    font-weight: bold;
+}
+
+#recipe:hover,
+#addRecipe:hover,
+#about:hover {
+    background-color: #7d8ade;
+}
+
+#logIn:hover {
+    background-color: rgb(9, 9, 135);
+}
+
+/* 0 margin så att elementen täcker upp hela sidan */
+body {
+    margin: 0px;
+}
+
+.breadcrumb {
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.search {
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2vh;
+}
+
+.searchInput {
+    flex: 1;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    height: 5vh;
+    max-width: 700px;
+}
+
+.searchButton {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 5vh;
+    background-color: blue;
+    color: white;
+    font-weight: bold;
+}
+
+.searchButton:hover {
+    background-color: rgb(9, 9, 135);
+}
+
+#favorite {
+    text-decoration: underline;
+    color: black;
+}
+
+.container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 10px;
+    margin-left: 10%;
+}
+
+.tags,
+#tags {
+    font-weight: bold;
+    text-decoration: underline;
+    color: black;
+}
+
+.recipeContainer,
+.recipeHow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 80%;
+    margin: auto;
+    gap: 20px;
+}
+
+.image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.description {
+    flex: 1;
+    max-width: 50%;
+    font-size: 1.5em;
+}
+
+.recipeInfo,
+.rateText {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.portions {
+    margin-left: 10%;
+    font-size: 1.5em;
+}
+
+.portionsDrop {
+    font-size: 0.8em;
+}
+
+.ingredients,
+.steps {
+    flex: 1;
+    font-size: 1.5em;
+}
+
+h3 {
+    text-decoration: underline;
+}
+
+h2 {
+    text-align: center;
+}
+
+/* Tar bort radioknappen */
+#startTimer {
+    display: none;
+}
+
+.timer {
+    padding: 10px 20px;
+    background-color: rgb(74, 135, 155);
+    color: white;
+    cursor: pointer;
+    display: flex;
+    border-radius: 5px;
+    font-size: 1.2em;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+/* En bar som försvinner gradvis inom 1800s (30 min) */
+.timerBar {
+    width: 100%;
+    height: 20px;
+    background-color: darkgray;
+    display: none;
+    animation: countdown 1800s linear forwards;
+}
+
+/* Gör så att "timern startas" när man trycker på knappen */
+#startTimer:checked~.timerBar {
+    display: block;
+}
+
+/* animering för att baren ska försvinna gradvis */
+@keyframes countdown {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+.rating {
+    display: flex;
+    /* Börjar från höger */
+    flex-direction: row-reverse;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+/* Döljer radioknapparna */
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 2em;
+    color: gray;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+/* ~ används för att för att göra stjärnorna till vänster 
+om markerad stjärna till guld*/
+.rating input:checked~label,
+.rating label:hover,
+.rating label:hover~label {
+    color: gold;
+}
+
+footer {
+    background-color: #A1ABE9;
+    height: 15vh;
+    min-height: 80px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    padding: 0;
+}
+
+.information ul,
+.contains ul,
+.contact ul {
+    list-style-type: none;
+    padding-left: 0;
+}
